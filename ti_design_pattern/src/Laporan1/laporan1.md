@@ -1,5 +1,5 @@
 # Laporan Modul 2: Dasar Pemrograman Java
-**Mata Kuliah:** Praktikum Pemrograman Berorientasi Objek   
+**Mata Kuliah:** Desain Pattern  
 **Nama:** MUHAMMAD RAYYAN ALFARISY
 **NIM:** 2024573010118
 **Kelas:** TI 2A
