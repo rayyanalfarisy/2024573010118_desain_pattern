@@ -16,7 +16,7 @@ Modul 2 “Dasar Pemrograman Java” bertujuan untuk memperkenalkan konsep funda
 Variabel dan Tipe Data
 Dalam bahasa Java, variabel adalah tempat untuk menyimpan data yang memiliki tipe tertentu. Java memiliki tipe data primitif seperti byte, short, int, long, float, double, boolean, dan char yang digunakan untuk menyimpan nilai sederhana. Selain itu terdapat juga tipe data referensi seperti String dan array yang digunakan untuk menyimpan data yang lebih kompleks. Penamaan variabel harus mengikuti aturan tertentu seperti tidak diawali angka, tidak menggunakan kata kunci Java, dan bersifat case sensitive. Pemahaman tentang tipe data dan variabel sangat penting karena menentukan bagaimana data dikelola dan diproses dalam program.
 #### Langkah Praktikum
-1.Buat package baru modul_1 di dalam folder src.
+1.Buat package baru Praktikum_1 di dalam folder src.
 
 2.Buat file Variable
 
