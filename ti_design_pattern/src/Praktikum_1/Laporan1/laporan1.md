@@ -7,7 +7,7 @@
 ---
 
 ## 1. Abstrak
-Modul 2 “Dasar Pemrograman Java” bertujuan untuk memperkenalkan konsep fundamental pemrograman dengan bahasa Java, meliputi variabel & tipe data, operasi input & output menggunakan Scanner, struktur kontrol percabangan, dan perulangan. Praktikum dilakukan dengan latihan langsung untuk mengimplementasikan teori melalui kode Java, diakhiri dengan analisa hasil dan refleksi pembelajaran.
+Modul 1 “Dasar Pemrograman Java” bertujuan untuk memperkenalkan konsep fundamental pemrograman dengan bahasa Java, meliputi variabel & tipe data, operasi input & output menggunakan Scanner, struktur kontrol percabangan, dan perulangan. Praktikum dilakukan dengan latihan langsung untuk mengimplementasikan teori melalui kode Java, diakhiri dengan analisa hasil dan refleksi pembelajaran.
 
 ---
 ## 2. Praktikum
@@ -24,50 +24,87 @@ Dalam bahasa Java, variabel adalah tempat untuk menyimpan data yang memiliki tip
 
 4.Cetak isi variabel ke konsol.
 #### Screenshoot Hasil
-![](gambar/gambar2.png)
-![](gambar/gambar3.png)
-hasilnya:
+![variable.png](gambar/variable.png)
 
+Latihan:
+buat package baru di dalam praktikum_1 dengan nama latihan
+
+buat file Variable
+
+Buatlah program untuk menampilkan data diri anda yang lengkap dengan attribut seperti berikut:
+
+Nama Lengkap, Tempat Lahir, Tanggal Lahir, Golongan Darah, Umur,
+Tinggi Badan, Jenis Kelamin, Agama, Pekerjaan.
+
+#### Screenshoot Hasil
+![LatVariable.png](gambar/LatVariable.png)
 
 #### Analisa dan Pembahasan
 Pada praktikum ini terlihat bahwa setiap tipe data di Java memiliki karakteristik dan batasan tertentu. Variabel bertipe int hanya dapat menyimpan bilangan bulat dalam rentang tertentu, sedangkan double dapat menyimpan angka desimal. Tipe data boolean hanya menampung nilai benar atau salah, dan char menyimpan satu karakter tunggal. Ketika program dijalankan, hasil output menunjukkan nilai setiap variabel sesuai dengan tipe data yang dideklarasikan. Percobaan ini memperkuat pemahaman bahwa pemilihan tipe data yang tepat penting agar program berjalan efisien dan tidak terjadi kesalahan saat pengolahan data.
 
 ### Praktikum 2 - Operator dan Expressi
 #### Dasar Teori
+Operator digunakan untuk melakukan operasi pada variabel dan nilai. Jenis operator:
 
+Aritmatika: +, -, *, /, %
+
+Perbandingan: ==, !=, >, <, >=, <=
+
+Logika: && (AND), || (OR), ! (NOT)
 #### Langkah Praktikum
 1.Buat file operator
 
 #### Screenshoot Hasil
-![](gambar/gambar4.png)
-hasilnya:
+![operator.png](gambar/operator.png)
 
+Latihan:
+
+buat file Operator
+
+#### Screenshoot Hasil
+![LatOperator.png](gambar/LatOperator.png)
 #### Analisa dan Pembahasan
 
 ### Praktikum 3 - Struktur Kontrol: Percabangan
 #### Dasar Teori
 
-Dalam praktikum ini digunakan struktur if–else dan switch untuk memproses keputusan berdasarkan kondisi tertentu. Hasil uji menunjukkan bahwa if–else cocok untuk kondisi kompleks dengan banyak logika, sedangkan switch lebih sederhana dan mudah dibaca untuk banyak pilihan yang terdefinisi jelas. Program grade menunjukkan hasil berbeda tergantung skor yang dimasukkan, dan menu switch berjalan lancar sesuai pilihan pengguna. Analisa ini menunjukkan pentingnya memilih struktur percabangan yang tepat agar kode lebih efisien, mudah dipelihara, dan hasil program sesuai harapan.
+Dalam praktikum ini digunakan struktur if–else dan switch untuk memproses keputusan berdasarkan kondisi tertentu. Hasil uji menunjukkan bahwa if–else cocok untuk kondisi kompleks dengan banyak logika, sedangkan switch lebih sederhana dan mudah dibaca untuk banyak pilihan yang terdefinisi jelas. 
+
+        if (kondisi) {
+        // Blok kode jika kondisi true
+        } else {
+        // Blok kode jika kondisi false
+        }
+
+        switch (variabel) {
+        case nilai1:
+        // Blok kode jika variabel == nilai1
+        break;
+        case nilai2:
+        // Blok kode jika variabel == nilai2
+        break;
+        default:
+        // Blok kode jika tidak ada case yang sesuai
+        }
 #### Langkah Praktikum
 
 3.1 Eksperimen If–Else Sederhana
 
 Buat file Percabangan
 
+Jalankan program, amati output untuk beberapa input berbeda.
+#### Screenshoot Hasil
+![percabangan.png](gambar/percabangan.png)
+
+3.2 Latihan
+Buat file Percabangan
+
 Tulis program untuk mengecek apakah angka yang dimasukkan pengguna adalah bilangan genap atau ganjil.
 
 Jalankan program, amati output untuk beberapa input berbeda.
-#### Screenshoot Hasil
-![](gambar/gambar6.png)
-
-3.2 Eksperimen Switch–Case
-
-Buat file percabangan
 
 #### Screenshoot Hasil
-![](gambar/gambar11.png)
-![](gambar/gambar10.png)
-
+![LatPercabangan.png](gambar/LatPercabangan.png)
 #### Analisa dan Pembahasan
 Dalam praktikum ini digunakan struktur if–else dan switch untuk memproses keputusan berdasarkan kondisi tertentu. Hasil uji menunjukkan bahwa if–else cocok untuk kondisi kompleks dengan banyak logika, sedangkan switch lebih sederhana dan mudah dibaca untuk banyak pilihan yang terdefinisi jelas. Program grade menunjukkan hasil berbeda tergantung skor yang dimasukkan, dan menu switch berjalan lancar sesuai pilihan pengguna. Analisa ini menunjukkan pentingnya memilih struktur percabangan yang tepat agar kode lebih efisien, mudah dipelihara, dan hasil program sesuai harapan.
 
@@ -78,83 +115,106 @@ Dalam praktikum ini digunakan struktur if–else dan switch untuk memproses kepu
 Perulangan adalah mekanisme untuk mengeksekusi blok kode secara berulang selama kondisi tertentu terpenuhi. Dalam Java terdapat tiga jenis perulangan utama yaitu for, while, dan do–while. Perulangan for biasanya digunakan ketika jumlah iterasi sudah diketahui, sedangkan while digunakan jika kondisi perlu diperiksa sebelum eksekusi blok kode. Do–while menjamin blok kode dijalankan minimal satu kali meskipun kondisi awal bernilai false. Selain itu, Java juga memungkinkan penggunaan perulangan bersarang (nested loop) untuk menjalankan proses yang lebih kompleks. Pemahaman perulangan membantu programmer menulis kode yang efisien dan terstruktur.
 
 #### Langkah Praktikum
-4.1 Eksperimen Perulangan For
+4.1 Eksperimen Perulangan 
 
-Buat file ForLoopDemo.java.
-
-Ketik program untuk mencetak angka 1–10 menggunakan perulangan for.
-
-Tambahkan variasi seperti perulangan mundur (decrement) dari 10 ke 1.
+Buat file perulangan
 
 Jalankan program, amati hasilnya.
 
 #### Screenshoot Hasil
-![](gambar/gambar13.png)
+![perulangan.png](gambar/perulangan.png)
 
+#### Latihan
+4.2 Eksperimen Perulangan For
 
-4.2 Eksperimen Perulangan While
+Buat file LatWhile
 
-Buat file WhileLoopDemo.java.
+Buat program untuk mencetak bilangan ganjil dari 1 hingga 20..
 
-Tulis program untuk mencetak angka ganjil dari 1 sampai 20 menggunakan while.
+Jalankan program
 
-Tambahkan kondisi berhenti berdasarkan input pengguna (misalnya tekan angka tertentu untuk berhenti).
+#### Screenshoot Hasil
+![LatFor.png](gambar/LatFor.png)
+
+4.3 Eksperimen Perulangan While
+
+Buat file LatWhile
+
+Buat program untuk mencetak bilangan ganjil dari 1 hingga 20..
 
 Jalankan program, amati perbedaan kontrol kondisi dibanding for.
 
 #### Screenshoot Hasil
-![](gambar/gambar15.png)
-![](gambar/gambar16.png)
+![LatWhile.png](gambar/LatWhile.png)
 
-4.3 Eksperimen Perulangan Do–While
+4.4 Eksperimen Perulangan Do–While
 
-Buat file DoWhileDemo.java.
+Buat file LatDoWhile
 
-Tulis program yang meminta pengguna memasukkan password hingga benar menggunakan do–while.
+Buat program untuk mencetak bilangan ganjil dari 1 hingga 20..
 
-Tampilkan pesan “Akses diterima” saat password benar dan “Coba lagi” jika salah.
-
-Jalankan program untuk melihat sifat do–while yang mengeksekusi blok minimal sekali.
+Jalankan program, amati perbedaan kontrol kondisi dibanding for dan Do While.
 
 #### Screenshoot Hasil
-
-
-4.4 Eksperimen Nested Loop (Perulangan Bersarang)
-
-Buat file NestedLoopDemo.java.
-
-Gunakan nested loop untuk mencetak pola bintang sederhana (misalnya segitiga).
-
-Kembangkan menjadi pola lain (persegi, segitiga terbalik, dll.) untuk melihat kreativitas.
-
-Jalankan program, amati hasil pola yang terbentuk.
-
-#### Screenshoot Hasil
-![](gambar/gambar17.png)
-
+![LatDoWhile.png](gambar/LatDoWhile.png)
 
 #### Analisa dan Pembahasan
-Hasil percobaan perulangan for, while, dan do–while memperlihatkan bahwa masing-masing memiliki kegunaan spesifik. Perulangan for efektif saat jumlah iterasi diketahui, sedangkan while dan do–while lebih fleksibel untuk kondisi dinamis. Pada do–while, meskipun kondisi awal salah, program tetap menjalankan blok kode minimal sekali sesuai sifatnya. Percobaan nested loop berhasil membentuk pola dan menunjukkan bahwa semakin dalam tingkat perulangan maka semakin besar pula kompleksitas eksekusi program. Dari sini dapat dianalisa bahwa pemahaman struktur perulangan membantu pengembang menulis program yang lebih efisien dan mudah dikendalikan alur eksekusinya.
-
-
-## 3. Kesimpulan
-``
-Berdasarkan praktikum Modul 2 Dasar Pemrograman Java dapat disimpulkan bahwa pemahaman konsep dasar seperti variabel, tipe data, input dan output, percabangan, serta perulangan merupakan fondasi penting dalam membangun program Java yang baik. Melalui percobaan variabel dan tipe data, mahasiswa belajar memilih tipe data yang sesuai agar pengolahan data menjadi lebih efisien. Pada percobaan input dan output menggunakan class Scanner, mahasiswa memahami cara berinteraksi dengan pengguna serta pentingnya penanganan kesalahan input. Struktur percabangan if–else dan switch membantu mahasiswa membangun logika pengambilan keputusan yang lebih jelas dan terstruktur, sedangkan perulangan for, while, do–while dan nested loop memperkenalkan cara mengotomatisasi proses berulang. Praktikum ini berhasil meningkatkan keterampilan mahasiswa dalam menerapkan konsep dasar pemrograman Java sehingga mampu membuat program yang interaktif, terstruktur, dan mudah dikembangkan.
+Hasil percobaan perulangan for, while, dan do–while memperlihatkan bahwa masing-masing memiliki kegunaan spesifik. Perulangan for efektif saat jumlah iterasi diketahui, sedangkan while dan do–while lebih fleksibel untuk kondisi dinamis.
 
 ---
+### Praktikum 5 - Practice Problem dan Solusinya
+Practice Problem:
+
+1. Buat program untuk menghitung faktorial dari suatu bilangan.
+2. Buat program untuk mengecek apakah suatu bilangan adalah bilangan prima.
+3. Buat program untuk mencetak pola segitiga menggunakan *.
+
+solusinya:
+
+5.1 program faktorial
+buat class baru di praktikum_1 dengan nama factorial
+
+isi dengan code
+
+Amati hasil program
+#### Screenshoot Hasil
+![factorial.png](gambar/factorial.png)
+
+5.2 program Prima
+buat class baru di praktikum_1 dengan nama Prima
+
+isi dengan code
+
+Amati hasil program
+#### Screenshoot Hasil
+![prima.png](gambar/prima.png)
+
+5.3 program segitiga
+buat class baru di praktikum_1 dengan nama segitiga
+
+isi dengan code
+
+Amati hasil program
+#### Screenshoot Hasil
+![segitiga.png](gambar/segitiga.png)
+
+---
+
+### kesimpulan
+Berdasarkan praktikum yang telah dilakukan sesuai dengan modul yang diberikan, dapat disimpulkan bahwa pemahaman mengenai dasar-dasar pemrograman sangat penting dalam proses pembuatan program. Praktikum ini membahas berbagai konsep dasar seperti penggunaan operator, ekspresi, serta cara kerja perhitungan dan logika dalam suatu program. Melalui kegiatan praktikum, mahasiswa dapat memahami bagaimana komputer memproses data menggunakan berbagai jenis operator dan bagaimana ekspresi digunakan untuk menghasilkan suatu nilai.
+
+Selain itu, praktikum ini juga membantu mahasiswa memahami cara menuliskan sintaks program dengan benar serta memahami urutan operasi dalam suatu perhitungan. Dengan mempraktikkan langsung contoh-contoh yang ada pada modul, mahasiswa dapat mengetahui bagaimana program dijalankan serta bagaimana hasil dari setiap operasi yang dilakukan oleh komputer.
+
+Secara keseluruhan, praktikum ini memberikan pemahaman yang lebih baik mengenai konsep dasar pemrograman dan cara penerapannya dalam pembuatan program sederhana. Dengan memahami materi yang terdapat dalam modul, mahasiswa diharapkan mampu menerapkan konsep tersebut dalam pengembangan program yang lebih kompleks pada tahap pembelajaran selanjutnya.
 
 ## 5. Referensi
 Duniailkom.
 Tutorial Belajar Java: Tipe Data Array dalam Bahasa Pemrograman Java.
 Diakses dari: https://www.duniailkom.com/tutorial-belajar-java-tipe-data-array-bahasa-pemrograman-java/
 
-Petani Kode.
-Belajar Java: Mengenal Array di Java.
-Diakses dari: https://www.petanikode.com/java-array/
+Mohd Rzu. 2024. Modul Operator dan Ekspresi. Tersedia pada: https://hackmd.io/@mohdrzu/BkBn4sEcyl
 
-W3Schools.
-Java Methods and Strings Tutorial.
-Diakses dari: https://www.w3schools.com/java/
+Kurniawan, A. 2020. Dasar-Dasar Pemrograman. Jakarta: Informatika.
 
 
 
