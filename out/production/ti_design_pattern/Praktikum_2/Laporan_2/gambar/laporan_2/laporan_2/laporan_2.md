@@ -30,54 +30,17 @@ Object adalah hasil instansiasi dari sebuah class. Setiap object memiliki keadaa
 3. Buat Sebuah package baru lagi didalam package `modul_2` dengan cara klik kanan dan pilih `New -> Package`. Beri nama `bagian_1`
 4. Kemudian buat sebuah class baru dengan nama `Mahasiswa` dan isikan kode berikut:
 
-         public class Mahasiswa {
-
-             String Nama;
-             int Umur;
-
-          }
+![11](https://hackmd.io/_uploads/r1wfJWAiyg.png)
 
 6. Selanjutnya, buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-        public class Main {
-        public static void main(String[]args){
-        Mahasiswa mhs1 = new Mahasiswa();
-        
-                mhs1.Nama = "Budi";
-                mhs1.Umur = 20;
-        
-                System.out.println("nama : " + mhs1.Nama);
-                System.out.println("umur : " + mhs1.Umur);
-            }
-        }
+![12](https://hackmd.io/_uploads/SJv71WRiJg.png)
 
 7. Jalankan dan lihat hasilnya.
 
 ### Latihan
 1. Buatlah class Buku dengan atribut judul dan pengarang.
-
-
-        public class Buku {
-        String judul;
-        String pengarang;
-        }
-2. Buat object dari class Buku dan isi nilai atributnya.        
-        public class Main {
-        public static void  main(String[] args){
-        Buku buku1 = new Buku();
-        
-        public class Main {
-        public static void  main(String[] args){
-        Buku buku1 = new Buku();
-
-        buku1.judul = "Laskar pelangi";
-        buku1.pengarang ="Andrea Hirata";
-
-        System.out.println("Judul : " + buku1.judul);
-        System.out.println("Pengarang : " + buku1.pengarang);
-
-            }
-        }
+2. Buat object dari class Buku dan isi nilai atributnya.
 3. Tampilkan nilai atribut tersebut.
 
 #### screenshoot
@@ -93,28 +56,11 @@ Attribute merupakan variabel yang dimiliki oleh sebuah class dan berfungsi untuk
 1. Buat Sebuah package baru lagi didalam package `modul_2` dengan cara klik kanan dan pilih `New -> Package`. Beri nama `bagian_2`
 2. Kemudian buat sebuah class baru dengan nama `Kalkulator` dan isikan kode berikut:
 
-        public class Kalkulator {
-        // Atribut
-        int angka1;
-        int angka2;
-        
-            // Method
-            int tambah() {
-                return angka1 + angka2;
-            }
-        }
+![21](https://hackmd.io/_uploads/S1Ajl-CsJx.png)
 
 3. Kemudian buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-        public class Main {
-        public static void main(String[] args) {
-        Kalkulator kalkulator = new Kalkulator();
-        kalkulator.angka1 = 5;
-        kalkulator.angka2 = 10;
-        
-                System.out.println("Hasil Penjumlahan: " + kalkulator.tambah());
-            }
-        }
+![22](https://hackmd.io/_uploads/SJVnlb0oyx.png)
 
 4. Jalankan program untuk melihat hasilnya.
 
