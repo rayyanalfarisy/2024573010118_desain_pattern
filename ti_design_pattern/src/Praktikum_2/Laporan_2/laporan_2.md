@@ -8,7 +8,6 @@
 
 ## 1. Abstrak
 Pemrograman Berorientasi Objek atau Object Oriented Programming (OOP) merupakan pendekatan dalam pemrograman yang berfokus pada penggunaan objek sebagai komponen utama dalam membangun sebuah program. Dalam bahasa pemrograman Java, konsep OOP sangat penting karena sebagian besar struktur program dibangun menggunakan class dan object.
-
 Praktikum pada modul ini bertujuan untuk memahami konsep dasar OOP yang meliputi pembuatan class dan object, penggunaan atribut dan method, penerapan akses modifier, penggunaan setter dan getter, serta penggunaan constructor. Dengan memahami konsep-konsep tersebut, mahasiswa diharapkan mampu mengembangkan program Java yang lebih terstruktur, mudah dipelihara, dan sesuai dengan prinsip OOP.
 ---
 ### Tujuan
