@@ -40,21 +40,81 @@ Object adalah instansi dari sebuah class. Object memiliki nilai atribut tertentu
 3. Buat Sebuah package baru lagi didalam package `modul_3` dengan cara klik kanan dan pilih `New -> Package`. Beri nama `bagian_1`
 4. Kemudian buat sebuah class baru dengan nama `Mahasiswa` dan isikan kode berikut:
 
-#### Screenshoot
-![11](https://hackmd.io/_uploads/B1Chr2Q2yl.png)
+        public class Mahasiswa {
+        //atribut
+        
+            String nama;
+            int umur;
+        
+            //metode
+            void displayInfo(){
+                System.out.println("nama: "+ nama);
+                System.out.println("nama: "+ umur);
+            }
+        }
 
 6. Selanjutnya, buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-#### Screenshoot
-![12](https://hackmd.io/_uploads/rJKarhQnyl.png)
+        public class Main {
+        public static void main(String[] args){
+        //Membuat objek
+        
+                Mahasiswa mhs1=new Mahasiswa();
+                mhs1.nama="Budi";
+                mhs1.umur=20;
+        
+                mhs1.displayInfo();
+            }
+        }
 
 7. Jalankan dan lihat hasilnya.
 
+![2026-04-11.png](2026-04-11.png)
+
 ### Latihan
 1. Buat class Buku dengan atribut judul, penulis, dan tahunTerbit.
+
+        public class Buku {
+        // Atribut
+        String judul;
+        String penulis;
+        int tahunTerbit;
+        
+            // Constructor
+            public Buku(String judul, String penulis, int tahunTerbit) {
+                this.judul = judul;
+                this.penulis = penulis;
+                this.tahunTerbit = tahunTerbit;
+            }
+        
+            // Method untuk menampilkan info buku
+            public void tampilkanInfo() {
+                System.out.println("Informasi Buku:");
+                System.out.println("Judul        : " + judul);
+                System.out.println("Penulis      : " + penulis);
+                System.out.println("Tahun Terbit : " + tahunTerbit);
+                System.out.println("---------------------------");
+            }
+        }
+
 2. Buat objek dari class Buku dan tampilkan informasi buku ke layar.
 
+        public class Main {
+        public static void main(String[] args) {
+        // Membuat objek dari class Buku
+        Buku buku1 = new Buku("Laskar Pelangi", "Andrea Hirata", 2005);
+        Buku buku2 = new Buku("Bumi", "Tere Liye", 2014);
+        
+                // Menampilkan informasi objek
+                buku1.tampilkanInfo();
+                buku2.tampilkanInfo();
+            }
+         }
+
+
 #### Screenshoot
+
+![2026-04-11 (1).png](2026-04-11%20%281%29.png)
 
 ---
 ## Bagian 2 - Encapsulation (Enkapsulasi)
@@ -68,21 +128,109 @@ Menggunakan getter dan setter untuk mengakses dan mengubah nilai atribut.
 1. Buat Sebuah package baru lagi didalam package `modul_3` dengan cara klik kanan dan pilih `New -> Package`. Beri nama `bagian_2`
 2. Kemudian buat sebuah class baru dengan nama `Mahasiswa` dan isikan kode berikut:
 
-#### screenshoot
-![21](https://hackmd.io/_uploads/H1LMw2X2Jl.png)
+        public class Mahasiswa {
+        private  String  nama;
+        private int umur;
+        
+            public String getNama(){
+                return nama;
+        
+            }
+        
+            public void setNama(String nama){
+                this.nama=nama;
+            }
+        
+            public int getUmur(){
+                return umur;
+            }
+        
+            public void setUmur(int umur){
+                this.umur=umur;
+            }
+        }
 
 3. Kemudian buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![22](https://hackmd.io/_uploads/SyLXPh73kx.png)
+        public class Main {
+        public static void main(String[] args){
+        Mahasiswa mhs1 = new Mahasiswa();
+        mhs1.setNama("Budi");
+        mhs1.setUmur(20);
+        
+                System.out.println("nama:"+mhs1.getNama());
+                System.out.println("Umur:"+mhs1.getUmur());
+            }
+        }
 
 4. Jalankan program untuk melihat hasilnya.
+
+![2026-04-11 (2).png](2026-04-11%20%282%29.png)
 
 ### Latihan
 1. Buat class Motor dengan atribut merk dan tahun yang dienkapsulasi/bersifat private.
 2. Buat getter dan setter untuk mengakses atribut .
 
+        public class Motor {
+        // Atribut diatur menjadi private (Enkapsulasi)
+        private String merk;
+        private int tahun;
+        
+            // Constructor
+            public Motor(String merk, int tahun) {
+                this.merk = merk;
+                this.tahun = tahun;
+            }
+        
+            // Getter untuk merk (Mengambil nilai)
+            public String getMerk() {
+                return merk;
+            }
+        
+            // Setter untuk merk (Mengubah nilai)
+            public void setMerk(String merk) {
+                this.merk = merk;
+            }
+        
+            // Getter untuk tahun
+            public int getTahun() {
+                return tahun;
+            }
+        
+            // Setter untuk tahun
+            public void setTahun(int tahun) {
+                // Keuntungan setter: kita bisa menambah validasi
+                if (tahun > 1885) { // Tahun motor pertama diciptakan
+                    this.tahun = tahun;
+                } else {
+                    System.out.println("Tahun tidak valid!");
+                }
+            }
+        }
+
+3. buat class nama `Main` 
+
+        public class Main {
+        public static void main(String[] args) {
+        // Membuat objek
+        Motor motorSaya = new Motor("Honda", 2020);
+        
+                // Mengakses data menggunakan Getter
+                System.out.println("Merk Awal: " + motorSaya.getMerk());
+        
+                // Mengubah data menggunakan Setter
+                motorSaya.setMerk("Yamaha");
+                motorSaya.setTahun(2023);
+        
+                System.out.println("Merk Baru: " + motorSaya.getMerk());
+                System.out.println("Tahun Baru: " + motorSaya.getTahun());
+            }
+        }
+
+
 #### screenshoot
+
+![2026-04-11 (3).png](2026-04-11%20%283%29.png)
 
 ---
 
@@ -102,20 +250,43 @@ Inheritance menggambarkan hubungan "is-a", contohnya Mobil adalah Kendaraan.
 2. Buat package baru di dalam `bagian_3` dan beri nama `pewarisan`
 3. Kemudian buat sebuah class baru dengan nama `Kendaraan` dan isikan kode berikut:
 
-#### screenshoot
-![31](https://hackmd.io/_uploads/BykUuhmnkg.png)
+        public class Kendaraan {
+        String merk;
+        int tahun;
+        
+            void displayInfo(){
+                System.out.println("merk :" + merk);
+                System.out.println("tahun :" + tahun);
+            }
+        }
 
 4. Kemudian buat sebuah class baru dengan nama `Mobil` dan isikan kode berikut:
 
-#### screenshoot
-![32](https://hackmd.io/_uploads/HyA8dhQ21x.png)
+        class Mobil extends Kendaraan {
+        int jumlahPintu;
+        
+            void displayInfoMobil(){
+                displayInfo();
+                System.out.println("Jumlah Pintu :" + jumlahPintu);
+            }
+        }
 
 5. Kemudian buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![33](https://hackmd.io/_uploads/HJGYuhm2kg.png)
+        public class Main {
+        public static void main(String[] args){
+        Mobil mobil1=new Mobil();
+        mobil1.merk="Toyota";
+        mobil1.tahun=2021;
+        mobil1.jumlahPintu=4;
+        
+                mobil1.displayInfoMobil();
+            }
+        }
 
 6. Jalankan program dan lihat hasilnya.
+
+![2026-04-11 (5).png](2026-04-11%20%285%29.png)
 
 #### Composition (Komposisi)
 Composition merupakan konsep di mana sebuah class memiliki objek dari class lain sebagai bagian dari strukturnya. Hubungan ini dikenal sebagai hubungan "has-a".
@@ -130,21 +301,50 @@ Sebagai contoh, sebuah Mobil memiliki Mesin.
 1. Buat package baru di dalam `bagian_3` dan beri nama `komposisi`
 2. Kemudian buat sebuah class baru dengan nama `Mesin` dan isikan kode berikut:
 
-#### screenshoot
-![34](https://hackmd.io/_uploads/S1E1P6mhJx.png)
+        public class Mesin {
+        void hidupkan(){
+        System.out.println("Mesin menyala.");
+        }
+        void matikan(){
+        System.out.println("Mesin dimatikan");
+        }
+        }
+
 
 #### screenshoot
 3. Kemudian buat sebuah class baru dengan nama `Mobil` dan isikan kode berikut:
 
-#### screenshoot
-![35](https://hackmd.io/_uploads/B1Hxv6mhyg.png)
+        class Mobil {
+        private final Mesin mesin; //komposisi
+        
+            public Mobil(){
+                this.mesin = new Mesin(); //membuat objek Mesin
+            }
+        
+            void mulai(){
+                mesin.hidupkan();
+                System.out.println("mobil siap digunakan.");
+            }
+        
+            void berhenti(){
+                mesin.matikan();
+                System.out.println("Mobil berhenti");
+            }
+        }
 
 4. Kemudian buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![36](https://hackmd.io/_uploads/BkV-P673Jl.png)
+        public class Main {
+        public static void main(String[] args){
+        Mobil mobil = new Mobil();
+        mobil.mulai();
+        mobil.berhenti();
+        }
+        }
 
 5. Jalankan program dan lihat hasilnya.
+
+![2026-04-11 (6).png](2026-04-11%20%286%29.png)
 
 #### Perbandingan Inheritance dan Composition
 ## Perbandingan Inheritance dan Composition
@@ -162,18 +362,128 @@ Di sisi lain, composition sebaiknya digunakan ketika hubungan antara class bersi
 ### Langkah Praktikum
 1. Di dalam package `bagian_3`, buat sebuah class baru dan beri nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![37](https://hackmd.io/_uploads/Hkj_OpQhJl.png)
+        // Class untuk Composition
+        class Mesin {
+        void hidupkan() {
+        System.out.println("Mesin menyala.");
+        }
+        
+            void matikan() {
+                System.out.println("Mesin dimatikan.");
+            }
+        }
+        
+        // Superclass untuk Inheritance
+        class Kendaraan {
+        void bergerak() {
+        System.out.println("Kendaraan sedang bergerak.");
+        }
+        }
+        
+        // Subclass yang menggunakan Composition dan Inheritance
+        class Mobil extends Kendaraan {
+        private Mesin mesin; // Composition
+        
+            public Mobil() {
+                this.mesin = new Mesin(); // Membuat objek Mesin
+            }
+        
+            void mulai() {
+                mesin.hidupkan();
+                System.out.println("Mobil siap digunakan.");
+            }
+        
+            void berhenti() {
+                mesin.matikan();
+                System.out.println("Mobil berhenti.");
+            }
+        }
+        
+        public class Main {
+        public static void main(String[] args) {
+        Mobil mobil = new Mobil();
+        mobil.mulai();     // Method dari Composition
+        mobil.bergerak();  // Method dari Inheritance
+        mobil.berhenti();  // Method dari Composition
+        }
+        }
 
 2. Jalankan dan lihat hasilnya.
 
+![2026-04-11 (4).png](2026-04-11%20%284%29.png)
+
 ### Latihan
 1. Buat class `Laptop` yang memiliki komponen Processor dan RAM (gunakan composition).
+
+        public class Laptop {
+        private String merk;
+        // Laptop "memiliki" Processor dan RAM
+        private Processor processor;
+        private RAM ram;
+        
+            public Laptop(String merk, String modelProc, int kapasitasRam) {
+                this.merk = merk;
+                // Objek komponen dibuat di dalam constructor Laptop
+                this.processor = new Processor(modelProc);
+                this.ram = new RAM(kapasitasRam);
+            }
+        
+            public void nyalakan() {
+                System.out.println("Menyalakan Laptop " + merk + "...");
+                ram.baca();
+                processor.jalankan();
+                System.out.println("Laptop siap digunakan.");
+            }
+        }
+
 2. Buat class `Processor` dengan metode `jalankan()`.
+
+        public class Processor {
+        private String model;
+        
+            public Processor(String model) {
+                this.model = model;
+            }
+        
+            public void jalankan() {
+                System.out.println("Processor " + model + " sedang memproses instruksi...");
+            }
+        }
+
 3. Buat class `RAM` dengan metode `baca()` dan `tulis()`.
+
+        public class RAM {
+        private int kapasitas; // dalam GB
+        
+            public RAM(int kapasitas) {
+                this.kapasitas = kapasitas;
+            }
+        
+            public void baca() {
+                System.out.println("Membaca data dari RAM " + kapasitas + "GB...");
+            }
+        
+            public void tulis() {
+                System.out.println("Menulis data ke RAM...");
+            }
+        }
+
 4. Implementasikan class `Laptop` yang menggunakan objek `Processor` dan `RAM`.
 
+        public class Main {
+        public static void main(String[] args) {
+        // Membuat objek Laptop yang secara otomatis membuat Processor dan RAM di dalamnya
+        Laptop laptopSaya = new Laptop("Asus ROG", "Intel i9", 32);
+        
+                laptopSaya.nyalakan();
+            }
+        }
+
+
 #### screenshoot
+
+![2026-04-11 (8).png](2026-04-11%20%288%29.png)
+
 ---
 ## Bagian 4 - Polymorphism (Polimorfisme)
 Polymorphism merupakan kemampuan sebuah objek untuk memiliki berbagai bentuk perilaku. Dalam Java, polymorphism dapat diterapkan melalui method overriding dan method overloading.
@@ -190,25 +500,46 @@ Method overriding terjadi ketika subclass memberikan implementasi baru terhadap 
 2. Kemudian buat sebuah package baru di dalam `bagian_4` dan beri nama `overriding`
 3. Kemudian buat sebuah class baru dengan nama `Hewan` dan isikan kode berikut:
 
-#### screenshoot
-![41](https://hackmd.io/_uploads/rJJWs2mnkg.png)
+        public class Hewan {
+        void bersuara(){
+        System.out.println("hewan bersuara.");
+        }
+        }
 
 4. Kemudian buat sebuah class baru dengan nama `Kucing` dan isikan kode berikut:
 
-#### screenshoot
-![42](https://hackmd.io/_uploads/SyOZj3m2ye.png)
+        class Kucing extends Hewan {
+        @Override
+        void bersuara(){
+        System.out.println("meong!");
+        }
+        }
 
 5. Kemudian buat sebuah class baru dengan nama `Anjing` dan isikan kode berikut:
 
-#### screenshoot
-![43](https://hackmd.io/_uploads/rkjzj3Xhyg.png)
+        class Anjing extends Hewan {
+        @Override
+        void bersuara(){
+        System.out.println("Guk Guk!");
+        }
+        }
 
 6. Kemudian buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![44](https://hackmd.io/_uploads/S1OQo2XhJg.png)
+        public class Main {
+        public static void main(String[] args){
+        Hewan hewan1 = new Kucing();
+        Hewan hewan2 = new Anjing();
+        
+                hewan1.bersuara();
+                hewan2.bersuara();
+            }
+        }
+
 
 7. Jalankan program untuk melihat hasilnya.
+
+![2026-04-11 (9).png](2026-04-11%20%289%29.png)
 
 #### Method Overloading
 Method overloading terjadi ketika sebuah class memiliki beberapa method dengan nama yang sama namun parameter yang berbeda.
@@ -222,15 +553,36 @@ Method overloading terjadi ketika sebuah class memiliki beberapa method dengan n
 1. Buat sebuah package baru di dalam `bagian_4` dan beri nama `overloading`
 2. Kemudian buat sebuah class baru dengan nama `Kalkulator` dan isikan kode berikut:
 
-#### screenshoot
-![45](https://hackmd.io/_uploads/rJCbnnmh1l.png)
+        public class Kalkulator {
+        //method overloading : penjumlahan dua bilangan bulat
+        int tambah(int a,int b){
+        return a + b;
+        }
+        //method overloading :penjumlahan tiga bilangan buat
+        int tambah(int a,int b,int c){
+        return a + b + c;
+        }
+        //method overloading:penjumlahan bilangan desimal
+        double tambah(double a,double b){
+        return a + b;
+        }
+        }
 
 3. Kemudian buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![46](https://hackmd.io/_uploads/r1dz2nX31e.png)
+        public class Main {
+        public static  void main (String[] args){
+        Kalkulator kalkulator = new Kalkulator();
+        
+                System.out.println("hasil 1 :" + kalkulator.tambah(5, 10));
+                System.out.println("hasil 2 :" + kalkulator.tambah(5, 10, 15));
+                System.out.println("hasil 3 :" + kalkulator.tambah(3.5, 2.5));
+            }
+        }
 
 4. Jalankan program untuk melihat hasilnya.
+
+![2026-04-11 (10).png](2026-04-11%20%2810%29.png)
 
 ##### Perbandingan Overriding dan Overloading
 | Aspek       | Overriding                                      | Overloading                                      |
@@ -245,16 +597,100 @@ Method overloading terjadi ketika sebuah class memiliki beberapa method dengan n
 ### Latihan
 ##### Latihan 1: Overriding
 1. Buat class BangunDatar dengan method hitungLuas().
-2. Buat subclass Persegi dan Lingkaran yang meng-override method hitungLuas().
-3. Implementasikan method hitungLuas() di masing-masing subclass.
+
+        public class BangunDatar {
+        // Method umum yang akan di-override
+        public double hitungLuas() {
+        System.out.println("Menghitung luas bangun datar...");
+        return 0;
+        }
+        }
+
+2. Buat subclass Persegi yang meng-override method hitungLuas().
+
+        public class Persegi extends BangunDatar {
+        private double sisi;
+        
+            public Persegi(double sisi){
+                this.sisi=sisi;
+            }
+            @Override
+            public double hitungLuas(){
+                return sisi * sisi;
+            }
+        }
+ 
+
+3. Lingkaran yang meng-override method hitungLuas().
+
+        public class Lingkaran extends BangunDatar{
+        private double jariJari;
+        
+                    public Lingkaran(double jariJari){
+                        this.jariJari=jariJari;
+                    }
+                    @Override
+                    public double hitungLuas(){
+                        return Math.PI*jariJari*jariJari;
+                    }
+                }
+
+4. Implementasikan method hitungLuas() di masing-masing subclass.
+
+        public class Main {
+        public static void main(String[] args) {
+        // Membuat objek dari subclass
+        BangunDatar persegi = new Persegi(2);
+        BangunDatar lingkaran = new Lingkaran(2);
+        
+                // Memanggil method yang telah di-override
+                System.out.println("Luas Persegi: " + persegi.hitungLuas());
+                System.out.format("Luas Lingkaran: %.2f\n", lingkaran.hitungLuas());
+            }
+        }
 
 #### screenshoot
-
+![2026-04-11 (13).png](2026-04-11%20%2813%29.png)
 ##### Latihan 2: Overloading
 1. Buat class Matematika dengan method tambah() yang dapat menerima 2 atau 3 parameter bertipe int.
 2. Tambahkan method tambah() yang menerima 2 parameter bertipe double.
 
+        public class Matematika {
+        //overloading 1
+        public int tambah(int a,int b){
+        return a + b;
+        }
+        //overloading 2
+        public int tambah(int a,int b,int c){
+        return a + b + c;
+        }
+        //overloading 3
+        public double tambah(double a,double b){
+        return a + b;
+        }
+        }
+
+3. buat class main
+
+        public class Main {
+        public static void main(String[] args) {
+        Matematika math = new Matematika();
+        
+                // Memanggil method dengan 2 int
+                System.out.println("Hasil 5 + 10 = " + math.tambah(5, 10));
+        
+                // Memanggil method dengan 3 int
+                System.out.println("Hasil 5 + 10 + 15 = " + math.tambah(5, 10, 15));
+        
+                // Memanggil method dengan 2 double
+                System.out.println("Hasil 5.5 + 4.5 = " + math.tambah(5.5, 4.5));
+            }
+        }
+
+
 #### screenshoot
+![2026-04-11 (14).png](2026-04-11%20%2814%29.png)
+
 ---
 
 ## Bagian 5 - Abstraction (Abstraksi) | Abstract Class dan Interface
@@ -277,23 +713,47 @@ Abstract class adalah class yang tidak dapat dibuat objeknya secara langsung. Cl
 2. Buat sebuah package baru di dalam `bagian_5` dan beri nama `abstrak`.
 3. Kemudian buat sebuah class baru di dalam `abtrak` dengan nama `Hewan` dan isikan kode berikut:
 
-#### screenshoot
-![51](https://hackmd.io/_uploads/H1OM-pX2kg.png)
+        abstract class Hewan {
+        String nama;
+        
+            void makan(){
+                System.out.println(nama + "sedang makan.");
+            }
+        
+            abstract void bersuara();
+        }
 
 4. Kemudian buat sebuah class baru di dalam `abtrak` dengan nama `Kucing` dan isikan kode berikut:
 
-#### screenshoot
-![52](https://hackmd.io/_uploads/Hkv7bp7h1e.png)
+        class Kucing extends Hewan {
+        @Override
+        void bersuara(){
+        System.out.println("Meong!");
+        }
+        }
 
 5. Kemudian buat sebuah class baru di dalam `abtrak` dengan nama `Anjing` dan isikan kode berikut:
 
-#### screenshoot
-![53](https://hackmd.io/_uploads/BkmNWpmnJx.png)
+        class Anjing extends Hewan {
+        @Override
+        void bersuara(){
+        System.out.println("Guk Guk!");
+        }
+        }
 
 6. Kemudian buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![54](https://hackmd.io/_uploads/HJ3VW6Xn1e.png)
+        public class Main {
+        public static void main(String[] args){
+        Hewan Kucing = new Kucing();
+        Kucing.makan();
+        Kucing.bersuara();
+        
+                Hewan anjing =  new Anjing();
+                anjing.makan();
+                anjing.bersuara();
+            }
+        }
 
 7. Jalankan program untuk melihat hasilnya.
 
@@ -307,25 +767,55 @@ Interface merupakan blueprint yang berisi kumpulan method yang harus diimplement
 1. Buat sebuah package baru di dalam `bagian_5` dan beri nama `antarmuka`.
 2. Kemudian buat sebuah interface baru di dalam `antarmuka` dengan nama `Bergerak` dan isikan kode berikut:
 
-#### screenshoot
-![55](https://hackmd.io/_uploads/SyUQGTQnJx.png)
+        public interface Bergerak {
+        void bergerak();
+        
+            default void berhenti(){
+                System.out.println("berhenti bergerak.");
+            }
+        
+            static void info(){
+                System.out.println("ini adalah interface bergerak.");
+            }
+        }
 
 3. Kemudian buat sebuah class baru di dalam `antarmuka` dengan nama `Mobil` dan isikan kode berikut:
 
-#### screenshoot
-![56](https://hackmd.io/_uploads/BJXSM6Xnyg.png)
+        public class Mobil implements Bergerak {
+        @Override
+        public void bergerak(){
+        System.out.println("mobil sedang melaju");
+        }
+        }
 
 4. Kemudian buat sebuah class baru di dalam `antarmuka` dengan nama `Pesawat` dan isikan kode berikut:
 
-#### screenshoot
-![57](https://hackmd.io/_uploads/rJAHfp721g.png)
+        public class Pesawat implements Bergerak {
+        @Override
+        public void bergerak() {
+        System.out.println("pesawat sedang terbang");
+        }
+        }
 
 5. Kemudian buat sebuah class baru dengan nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![58](https://hackmd.io/_uploads/BkxwGTXnkg.png)
+        public class Main {
+        public static void main(String[] args){
+        Bergerak mobil = new Mobil();
+        mobil.bergerak();
+        mobil.berhenti();
+        
+                Bergerak pesawat = new Pesawat();
+                pesawat.bergerak();
+                pesawat.berhenti();
+        
+                Bergerak.info();
+            }
+        }
 
 6. Jalankan program untuk melihat hasilnya.
+
+![2026-04-11 (15).png](2026-04-11%20%2815%29.png)
 
 #### Perbandingan Abstract Class dan Interface
 | Aspek       | Abstract Class                                  | Interface                                      |
@@ -353,18 +843,99 @@ Dalam Sebuah program, kita juga dapat mengkombinasikan abstract class dengan int
 ### Langkah Praktikum
 1. Didalam package `bagian_5`, buatlah sebuah class baru dan beri nama `Main` dan isikan kode berikut:
 
-#### screenshoot
-![59](https://hackmd.io/_uploads/S1sMN67nJl.png)
+        interface Terbang {
+        void terbang();
+        }
+        
+        // Abstract Class
+        abstract class Hewan {
+        String nama;
+        
+            abstract void bersuara();
+        }
+        
+        // Class yang mewarisi abstract class dan mengimplementasikan interface
+        class Burung extends Hewan implements Terbang {
+        @Override
+        void bersuara() {
+        System.out.println("Kicau kicau!");
+        }
+        
+            @Override
+            public void terbang() {
+                System.out.println(nama + " sedang terbang.");
+            }
+        }
+        
+        public class Main {
+        public static void main(String[] args) {
+        Burung burung = new Burung();
+        burung.nama = "Merpati";
+        burung.bersuara();
+        burung.terbang();
+        }
+        }
 
 2. Jalankan program untuk melihat hasilnya.
 
+![2026-04-11 (16).png](2026-04-11%20%2816%29.png)
+
 ### Latihan
 1. Buat sebuah interface `Berenang` dengan method `berenang()`.
+
+        public interface Berenang {
+        void berenang();
+        }
+
 2. Buat abstract class `HewanAir` dengan atribut `nama` dan method abstrak `makan()`.
+
+        public abstract class HewanAir {
+        protected String nama;
+        
+            public HewanAir(String nama) {
+                this.nama = nama;
+            }
+        
+            // Method abstrak yang wajib diimplementasikan oleh subclass
+            public abstract void makan();
+        }
+
 3. Buat class `Ikan` yang mewarisi `HewanAir` dan mengimplementasikan `Berenang`.
+
+        public class Ikan extends HewanAir implements Berenang {
+        
+            public Ikan(String nama) {
+                super(nama);
+            }
+        
+            // Mengimplementasikan method dari abstract class HewanAir
+            @Override
+            public void makan() {
+                System.out.println(nama + " sedang makan pelet atau plankton.");
+            }
+        
+            // Mengimplementasikan method dari interface Berenang
+            @Override
+            public void berenang() {
+                System.out.println(nama + " berenang dengan cara menggerakkan siripnya.");
+            }
+        }
+
 4. Implementasikan method `berenang()` dan `makan()` di class `Ikan`.
 
+        public class Main {
+        public static void main(String[] args) {
+        Ikan ikanNemo = new Ikan("Nemo");
+        
+                ikanNemo.makan();
+                ikanNemo.berenang();
+            }
+        }
+
+
 #### screenshoot
+![2026-04-11 (17).png](2026-04-11%20%2817%29.png)
+
 ---
 
 ## Bagian 6 - Aplikasi Console Pemesanan Tiket Sederhana
@@ -390,23 +961,211 @@ Abstraction dengan menjadikan class Tiket sebagai abstract class.
 1. Buat Sebuah package baru lagi didalam package `modul_3` dengan cara klik kanan dan pilih `New -> Package`. Beri nama `bagian_6`
 2. Kemudian buat sebuah class baru dengan nama `Tiket` dan isikan kode berikut:
 
-![61](https://hackmd.io/_uploads/H1zIhTmhkl.png)
+        abstract class Tiket {
+        private final String jenis;
+        private final double harga;
+        
+            public Tiket(String jenis, double harga){
+                this.jenis=jenis;
+                this.harga=harga;
+            }
+        
+            public String getJenis(){
+                return jenis;
+            }
+            public double getHarga(){
+                return harga;
+            }
+        
+            //abstrak method untuk menghitung diskon
+            public abstract double hitungDiskon();
+        }
 
 3. Kemudian buat sebuah class baru dengan nama `TiketReguler` dan isikan kode berikut:
 
-![62](https://hackmd.io/_uploads/r12L2a7nke.png)
+        class TiketReguler extends Tiket{
+        public TiketReguler(){
+        super("Reguler",1000000);
+        }
+        @Override
+        public double hitungDiskon(){
+        return 0;
+        }
+        }
 
 4. Kemudian buat sebuah class baru dengan nama `TiketVIP` dan isikan kode berikut:
 
-![63](https://hackmd.io/_uploads/BJLw36Q3ye.png)
+        class TiketVIP extends Tiket{
+        public TiketVIP(){
+        super("VIP",2500000);
+        }
+        @Override
+        public double hitungDiskon(){
+        return 0.1 * getHarga();
+        }
+        }
 
 5. Kemudian buat sebuah class baru dengan nama `Pesanan` dan isikan kode berikut:
 
-![64](https://hackmd.io/_uploads/B1Z_nTmhke.png)
+        class Pesanan {
+        private final String namaPemesan;
+        private final Tiket tiket;
+        private final int jumlah;
+        
+            public Pesanan(String namaPemesan, Tiket tiket, int jumlah) {
+                this.namaPemesan = namaPemesan;
+                this.tiket = tiket;
+                this.jumlah = jumlah;
+            }
+        
+            public String getNamaPemesan() {
+                return namaPemesan;
+            }
+        
+            public Tiket getTiket() {
+                return tiket;
+            }
+        
+            public int getJumlah() {
+                return jumlah;
+            }
+        
+            // Menghitung total harga setelah diskon
+            public double hitungTotal() {
+                double total = tiket.getHarga() * jumlah;
+                double diskon = tiket.hitungDiskon() * jumlah;
+                return total - diskon;
+            }
+        
+            // Menampilkan detail pesanan
+            public void displayDetail() {
+                System.out.println("\nDetail Pesanan:");
+                System.out.println("Nama Pemesan: " + namaPemesan);
+                System.out.println("Jenis Tiket: " + tiket.getJenis());
+                System.out.println("Jumlah: " + jumlah);
+                System.out.println("Total Harga: Rp" + hitungTotal());
+            }
+        }
 
 6. Kemudian buat sebuah class baru dengan nama `KonferensiApp` dan isikan kode berikut:
 
-![65](https://hackmd.io/_uploads/HyQpnTmhkl.png)
+        import java.util.ArrayList;
+        import java.util.Scanner;
+        
+        public class KonferensiApp {
+        private static final ArrayList<Pesanan> daftarPesanan = new ArrayList<>();
+        private static final Scanner scanner = new Scanner(System.in);
+        
+            public static void main(String[] args) {
+                while (true) {
+                    System.out.println("\n=== Aplikasi Pemesanan Tiket Konferensi ===");
+                    System.out.println("1. Lihat Daftar Tiket");
+                    System.out.println("2. Pesan Tiket");
+                    System.out.println("3. Lihat Detail Pesanan");
+                    System.out.println("4. Batalkan Pesanan");
+                    System.out.println("5. Keluar");
+                    System.out.print("Pilih menu: ");
+                    int pilihan = scanner.nextInt();
+                    scanner.nextLine(); // Membersihkan newline
+        
+                    switch (pilihan) {
+                        case 1:
+                            lihatDaftarTiket();
+                            break;
+                        case 2:
+                            pesanTiket();
+                            break;
+                        case 3:
+                            lihatDetailPesanan();
+                            break;
+                        case 4:
+                            batalkanPesanan();
+                            break;
+                        case 5:
+                            System.out.println("Terima kasih telah menggunakan aplikasi ini.");
+                            System.exit(0);
+                        default:
+                            System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+                    }
+                }
+            }
+        
+            // Method untuk menampilkan daftar tiket
+            private static void lihatDaftarTiket() {
+                System.out.println("\nDaftar Tiket:");
+                System.out.println("1. Tiket Reguler - Rp100.000");
+                System.out.println("2. Tiket VIP - Rp250.000 (Diskon 10%)");
+            }
+        
+            // Method untuk memesan tiket
+            private static void pesanTiket() {
+                System.out.print("\nMasukkan nama pemesan: ");
+                String namaPemesan = scanner.nextLine();
+        
+                System.out.print("Pilih jenis tiket (1: Reguler, 2: VIP): ");
+                int jenisTiket = scanner.nextInt();
+                System.out.print("Masukkan jumlah tiket: ");
+                int jumlah = scanner.nextInt();
+        
+                Tiket tiket = null;
+                switch (jenisTiket) {
+                    case 1:
+                        tiket = new TiketReguler();
+                        break;
+                    case 2:
+                        tiket = new TiketVIP();
+                        break;
+                    default:
+                        System.out.println("Jenis tiket tidak valid.");
+                        return;
+                }
+        
+                Pesanan pesanan = new Pesanan(namaPemesan, tiket, jumlah);
+                daftarPesanan.add(pesanan);
+                System.out.println("Pesanan berhasil dibuat!");
+                pesanan.displayDetail();
+            }
+        
+            // Method untuk melihat detail pesanan
+            private static void lihatDetailPesanan() {
+                if (isNoPesanan()) return;
+        
+                System.out.print("Pilih nomor pesanan untuk melihat detail: ");
+                int nomorPesanan = scanner.nextInt();
+                if (nomorPesanan > 0 && nomorPesanan <= daftarPesanan.size()) {
+                    daftarPesanan.get(nomorPesanan - 1).displayDetail();
+                } else {
+                    System.out.println("Nomor pesanan tidak valid.");
+                }
+            }
+        
+            private static boolean isNoPesanan() {
+                if (daftarPesanan.isEmpty()) {
+                    System.out.println("\nBelum ada pesanan.");
+                    return true;
+                }
+        
+                System.out.println("\nDaftar Pesanan:");
+                for (int i = 0; i < daftarPesanan.size(); i++) {
+                    System.out.println((i + 1) + ". " + daftarPesanan.get(i).getNamaPemesan());
+                }
+                return false;
+            }
+        
+            // Method untuk membatalkan pesanan
+            private static void batalkanPesanan() {
+                if (isNoPesanan()) return;
+        
+                System.out.print("Pilih nomor pesanan yang ingin dibatalkan: ");
+                int nomorPesanan = scanner.nextInt();
+                if (nomorPesanan > 0 && nomorPesanan <= daftarPesanan.size()) {
+                    daftarPesanan.remove(nomorPesanan - 1);
+                    System.out.println("Pesanan berhasil dibatalkan.");
+                } else {
+                    System.out.println("Nomor pesanan tidak valid.");
+                }
+            }
+        }
 
 #### Fitur Apliaksi:
 1. Lihat Daftar Tiket: Menampilkan jenis tiket dan harganya.
