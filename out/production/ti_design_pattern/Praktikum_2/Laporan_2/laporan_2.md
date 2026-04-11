@@ -362,6 +362,8 @@ Jenis constructor yang umum digunakan antara lain:
 
 4. Jalankan program untuk melihat hasilnya.
 
+![2026-04-11 (28).png](gambar/2026-04-11%20%2828%29.png)
+
 ### Latihan
 1. Buat class `Barang` dengan atribut `namaBarang` dan `harga`.
 2. Buat `default constructor` dan `parameterized constructor`.
@@ -410,7 +412,7 @@ Jenis constructor yang umum digunakan antara lain:
         }
 
 #### screenshoot hasil
-
+![2026-04-11 (29).png](gambar/2026-04-11%20%2829%29.png)
 ### Analisis program
 constructor merupakan method khusus yang akan dijalankan secara otomatis ketika sebuah object dibuat. Dengan adanya constructor, nilai awal atribut dapat langsung diinisialisasi saat objek dibuat. Praktikum ini juga memperlihatkan adanya beberapa jenis constructor seperti default constructor, parameterized constructor, dan constructor overloading.
 

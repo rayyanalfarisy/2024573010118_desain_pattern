@@ -191,6 +191,7 @@ Jenis-jenis akses modifier dalam Java antara lain:
        }
 
 4. Jalankan program untuk melihat hasilnya.
+
 ![2026-04-11 (23).png](gambar/2026-04-11%20%2823%29.png)
 
 ### Latihan
@@ -256,7 +257,7 @@ Penggunaan setter dan getter merupakan bagian dari konsep encapsulation dalam OO
         }
 
 4. Jalankan program untuk melihat hasilnya.
-![2026-04-11 (27).png](gambar/2026-04-11%20%2827%29.png)
+![2026-04-11 (30).png](gambar/2026-04-11%20%2830%29.png)
 
 ### Latihan
 1. Buat class Mahasiswa dengan atribut nama (private) dan nim (private).
