@@ -13,7 +13,7 @@ Pemrograman Berorientasi Objek atau Object-Oriented Programming (OOP) merupakan 
 Pada praktikum ini dilakukan peninjauan kembali terhadap empat pilar utama OOP yaitu Encapsulation, Inheritance, Polymorphism, dan Abstraction menggunakan bahasa pemrograman Java. Selain itu juga dipelajari konsep dasar seperti Class dan Object serta konsep Composition yang sering digunakan dalam pengembangan perangkat lunak berorientasi objek.
 
 Melalui serangkaian latihan dan implementasi program sederhana, mahasiswa diharapkan dapat memahami cara kerja konsep-konsep OOP serta mampu menerapkannya dalam pembuatan program berbasis Java.
----
+
 ## Review 4 Pillar OOP Menggunakan Java
 ### Tujuan
 Tujuan dari praktikum ini adalah:
