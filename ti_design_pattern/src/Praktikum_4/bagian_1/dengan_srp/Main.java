@@ -12,13 +12,13 @@ public class Main {
         System.out.println("Masukkan nama file laporan: ");
         String reportFileName = scanner.nextLine();
 
-        ReportGenerator report = new ReportGenerator(reportText);
+        Praktikum_4.dengan_srp.ReportGenerator report = new Praktikum_4.dengan_srp.ReportGenerator(reportText);
         String reportContent = report.generateReport();
 
-        ReportSaver saver = new ReportSaver();
+        Praktikum_4.dengan_srp.ReportSaver saver = new Praktikum_4.dengan_srp.ReportSaver();
         saver.saveToFile(reportFileName + ".txt",reportContent);
 
-        ReportPrinter printer =  new ReportPrinter();
+        Praktikum_4.dengan_srp.ReportPrinter printer =  new Praktikum_4.dengan_srp.ReportPrinter();
         printer.printReport(reportContent);
     }
 }
