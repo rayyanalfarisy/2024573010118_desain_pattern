@@ -5,7 +5,7 @@
 **Kelas:** TI 2A
 
 ---
-## 1. Abstrak
+## 1. Abstraks
 Pada modul ini dipelajari penerapan prinsip Liskov Substitution Principle (LSP) yang merupakan salah satu prinsip dalam SOLID serta Strategy Pattern sebagai salah satu pola desain perilaku (behavioral design pattern). LSP menekankan bahwa objek dari kelas turunan harus dapat menggantikan objek dari kelas induknya tanpa mengubah perilaku program. Sementara itu, Strategy Pattern digunakan untuk memisahkan algoritma ke dalam kelas-kelas terpisah sehingga algoritma dapat dipilih dan diganti secara fleksibel saat program berjalan.
 
 Melalui praktikum ini dilakukan identifikasi kode yang melanggar prinsip LSP, kemudian dilakukan proses refactoring agar kode menjadi lebih fleksibel, mudah dikembangkan, dan sesuai dengan prinsip desain perangkat lunak yang baik.
@@ -281,10 +281,6 @@ Buat interface PaymentStrategy dengan method pay(double amount).
 Buat tiga class yang mengimplementasikan PaymentStrategy yaitu: CreditCardPayment, EWalletPayment, dan BankTransferPayment.
 Buat class Checkout(Contex Class) yang menggunakan PaymentStrategy.
 Di dalam main, tunjukkan contoh penggunaan masing-masing metode pembayaran.
-Tugas Analisis:
-Jelaskan mengapa Strategy Pattern cocok digunakan dalam kasus pembayaran e-commerce.
-Bagaimana jika suatu hari ingin menambahkan metode pembayaran baru seperti QRIS? Apakah Anda perlu mengubah class Checkout?
-
 Langkah Praktikum
 Buat sebuah package baru di dalam Praktikum_7 dan beri nama latihan
 Kemudian buat sebuah interface PaymentStrategy dan isikan kode berikut:
