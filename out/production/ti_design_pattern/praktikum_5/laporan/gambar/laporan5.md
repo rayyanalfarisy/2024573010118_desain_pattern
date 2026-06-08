@@ -80,11 +80,34 @@ Tidak perlu digunakan jika:
 2. Buat sebuah package baru di dalam `praktikum_1` dan beri nama `tanpa_ocp`
 3. Buat class baru di dalam `tanpa_ocp` dengan nama `PaymentProcessor` dan isikan kode seperti berikut:
 
-![11](https://hackmd.io/_uploads/S1mfodA31x.png)
+        public class PaymentProcessor {
+        public void processPayment(String paymentType,double amount){
+        if(paymentType.equals("creditCard")){
+        System.out.println("Processing Credit Card Payment of " + amount);
+        } else if (paymentType.equals("Ewallet")) {
+        System.out.println("Processing E-wallet payment of " + amount);
+        }else {
+        System.out.println("Invalid payment method");
+        }
+        }
+        }
 
 5. Buat class `Main` dan isikan kode berikut:
 
-![12](https://hackmd.io/_uploads/B1bXo_RnJe.png)
+        import java.util.Scanner;
+        
+        public class Main {
+        public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Payment type (CreditCard/Ewallet):");
+        String type = scanner.next();
+        System.out.println("enter amount : ");
+        double amount = scanner.nextDouble();
+        
+                PaymentProcessor processor = new PaymentProcessor();
+                processor.processPayment(type,amount);
+            }
+        }
 
 6. Jalankan dan lihat hasilnya.
 
@@ -92,23 +115,61 @@ Tidak perlu digunakan jika:
 1. Buat sebuah package baru di dalam `modul_1` dan beri nama `dengan_ocp`
 2. Buat sebuah interface dengan nama `PaymentMethod` dan isikan kode berikut:
 
-![21](https://hackmd.io/_uploads/HkB4sdChJx.png)
+        public interface PaymentMethod {
+        void process(double amount);
+        }
 
 3. Buat sebuah class dengan nama `CreditCardPayment` dan isikan kode berikut:
 
-![22](https://hackmd.io/_uploads/HkfBju0nJl.png)
+        public class CreditCardPayment implements PaymentMethod{
+        public void process(double amount){
+        System.out.println("Processing Credit Card Payment of " + amount);
+        }
+        }
 
 4. Buat sebuah class dengan nama `EWalletPayment` dan isikan kode berikut:
 
-![23](https://hackmd.io/_uploads/r1D8odAhJe.png)
+        public class EwalletPayment implements PaymentMethod{
+        public void process(double amount){
+        System.out.println("Prosessing E-Wallet Payment of " + amount);
+        }
+        }
 
 5. Buat sebuah class dengan nama `PaymentProcessor` dan isikan kode berikut:
 
-![24](https://hackmd.io/_uploads/H1_PsuChJl.png)
+        public class PaymentProcessor {
+        public void processPayment(PaymentMethod method,double amount){
+        method.process(amount);
+        }
+        }
 
 6. Buat sebuah class `Main` dan isikan kode berikut:
 
-![25](https://hackmd.io/_uploads/S1Euj_Cnyl.png)
+        import java.util.Scanner;
+        
+        public class Main {
+        public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter payment type (CreditCard/EWallet): ");
+        String type = scanner.next();
+        System.out.print("Enter amount: ");
+        double amount = scanner.nextDouble();
+        
+                PaymentProcessor processor = new PaymentProcessor();
+                PaymentMethod paymentMethod;
+        
+                if (type.equalsIgnoreCase("CreditCard")) {
+                    paymentMethod = new CreditCardPayment();
+                } else if (type.equalsIgnoreCase("EWallet")) {
+                    paymentMethod = new EwalletPayment();
+                } else {
+                    System.out.println("Invalid payment method");
+                    return;
+                }
+        
+                processor.processPayment(paymentMethod, amount);
+            }
+        }
 
 7. Jalankan dan lihat hasilnya.
 
@@ -123,11 +184,29 @@ Tidak perlu digunakan jika:
 2. Buat sebuah package baru di dalam `modul_2` dan beri nama `tanpa_ocp`
 3. Buat class baru di dalam `tanpa_ocp` dengan nama `DiscountCalculator` dan isikan kode seperti berikut:
 
-![21](https://hackmd.io/_uploads/Hk9ndFeJel.png)
+        public class DiscountCalculator {
+        public double calculateDiscount(String costumerType,double price){
+        if (costumerType.equals("Reguler")){
+        return price * 0.1;
+        } else if (costumerType.equals("Premium")) {
+        return price * 0.2;
+        }else {
+        return 0;
+        }
+        }
+        }
 
 4. Buat class `Main` dan isikan kode berikut:
 
-![22](https://hackmd.io/_uploads/BJ9aOtg1xl.png)
+        public class Main {
+        public static void main(String[] args){
+        DiscountCalculator calculator = new DiscountCalculator();
+        System.out.println("Reguler costumer doscount: " +
+        calculator.calculateDiscount("Reguler",100));
+        System.out.println("Premium costomer discount :" +
+        calculator.calculateDiscount("Premium", 100));
+        }
+        }
 
 5. Jalankan dan lihat hasilnya.
 
@@ -135,23 +214,49 @@ Tidak perlu digunakan jika:
 1. Buat sebuah package baru di dalam `modul_2` dan beri nama `dengan_ocp`
 2. Buat sebuah interface dengan nama `Discount` dan isikan kode berikut:
 
-![23](https://hackmd.io/_uploads/HJvAdtxJll.png)
+        public interface Discount {
+        double applyDiscount(double price);
+        }
 
 3. Buat sebuah class dengan nama `RegularDiscount` dan isikan kode berikut:
 
-![24](https://hackmd.io/_uploads/ByVJtteJxg.png)
+        public class RegulerDiscount implements Discount{
+        @Override
+        public double applyDiscount(double price) {
+        return price * 0.2;
+        }
+        }
 
 4. Buat sebuah class dengan nama `PremiumDiscount` dan isikan kode berikut:
 
-![25](https://hackmd.io/_uploads/SyygYYxyex.png)
+        public class PremiumDiscount implements Discount{
+        @Override
+        public double applyDiscount(double price) {
+        return price * 0.2;
+        }
+        }
 
 5. Buat sebuah class dengan nama `DiscountCalculator` dan isikan kode berikut:
 
-![26](https://hackmd.io/_uploads/SJ_gKKx1xe.png)
+        public class DiscountCalculator {
+        public double calculateDiscount(Discount discountStrategy,double price){
+        return discountStrategy.applyDiscount(price);
+        }
+        }
 
 6. Buat sebuah class `Main` dan isikan kode berikut:
 
-![27](https://hackmd.io/_uploads/HyE-YKeJxx.png)
+        public class Main {
+        public static void main(String[] args){
+        DiscountCalculator calculator = new DiscountCalculator();
+        
+                Discount reguler = new RegulerDiscount();
+                Discount premium = new PremiumDiscount();
+        
+                System.out.println("reguler Costumer Discount:" + calculator.calculateDiscount(reguler,100));
+                System.out.println("Premium Costumer Discount:" + calculator.calculateDiscount(premium,100));
+            }
+        }
 
 7. Jalankan dan lihat hasilnya.
 
@@ -167,11 +272,27 @@ Tidak perlu digunakan jika:
 2. Buat sebuah package baru di dalam `modul_3` dan beri nama `tanpa_ocp`
 3. Buat class baru di dalam `tanpa_ocp` dengan nama `NotificationService` dan isikan kode seperti berikut:
 
-![31](https://hackmd.io/_uploads/SyzWitx1xl.png)
+        public class NotificationService {
+        public void sendNotification(String type, String message) {
+        if (type.equals("Email")) {
+        System.out.println("Sending Email: " + message);
+        } else if (type.equals("SMS")) {
+        System.out.println("Sending SMS: " + message);
+        } else {
+        System.out.println("Invalid notification type");
+        }
+        }
+        }
 
 4. Buat class `Main` dan isikan kode berikut:
 
-![32](https://hackmd.io/_uploads/HkCbote1gx.png)
+        public class Main {
+        public static void main(String[] args){
+        NotificationService service = new NotificationService();
+        service.sendNotification("Email","Hello Via Email!");
+        service.sendNotification("SMS","Hello via SMS ");
+        }
+        }
 
 5. Jalankan dan lihat hasilnya.
 
@@ -179,23 +300,48 @@ Tidak perlu digunakan jika:
 1. Buat sebuah package baru di dalam `modul_3` dan beri nama `dengan_ocp`
 2. Buat sebuah interface dengan nama `Notifier` dan isikan kode berikut:
 
-![33](https://hackmd.io/_uploads/HJYQstl1gl.png)
+        public interface Notifier {
+        void send(String message);
+        }
 
 3. Buat sebuah class dengan nama `EmailNotifier` dan isikan kode berikut:
 
-![34](https://hackmd.io/_uploads/BktNstx1ge.png)
+        public class EmailNotifier implements Notifier {
+        public void send(String message){
+        System.out.println("Sending Email: " + message);
+        }
+        }
 
 4. Buat sebuah class dengan nama `SMSNotifier` dan isikan kode berikut:
 
-![35](https://hackmd.io/_uploads/r1srjtl1lg.png)
+        public class SMSNotifier implements Notifier{
+        public void send(String message){
+        System.out.println("Sendin SMS:" + message);
+        }
+        }
+
 
 5. Buat sebuah class dengan nama `NotificationService` dan isikan kode berikut:
 
-![36](https://hackmd.io/_uploads/HkCIjYxklx.png)
+        public class NotificationService {
+        public void sendNotification(Notifier notifier,String message){
+        notifier.send(message);
+        }
+        }
 
 6. Buat sebuah class `Main` dan isikan kode berikut:
 
-![37](https://hackmd.io/_uploads/r1KPsKe1gg.png)
+        public class Main {
+        public static void main(String[] args){
+        NotificationService service = new NotificationService();
+        
+                Notifier emailNotifier = new EmailNotifier();
+                Notifier smsNotifier = new SMSNotifier();
+        
+                service.sendNotification(emailNotifier, "Hello via email");
+                service.sendNotification(smsNotifier,"Hello via sms");
+            }
+        }
 
 7. Jalankan dan lihat hasilnya.
 
@@ -207,11 +353,40 @@ Tidak perlu digunakan jika:
 ### Latihan : Sistem Pengelolaan Pajak
 Program ini menghitung pajak berdasarkan jenis kendaraan (Mobil atau Motor). Saat ini, kode yang ada dibawah ini tidak mengikuti OCP, sehingga jika kita ingin menambahkan jenis kendaraan baru (misalnya Truk), kita harus mengubah metode `calculateTax()`. Kode yang melanggar aturan OCP adalah sebagai berikut:
 
-Class `TaxCalculator`
-![lat1](https://hackmd.io/_uploads/BkoRpuA2ke.png)
+1. Buat Class `TaxCalculator` dan isikan kode berikut:
 
-Class `Main`
-![lat2](https://hackmd.io/_uploads/HJs1R_Ch1g.png)
+    public class TaxCalculator {
+    public double calculateTax(String vehicleType,double price){
+    if(vehicleType.equals("Car")){
+    return price * 0.1; //pajak 10% untuk mobil
+    } else if (vehicleType.equals("Motorcyle")) {
+    return price * 0.5; //pajak 5% untuk motor
+    
+            }else {
+                return 0;
+            }
+        }
+    }
+
+
+2. Buat Class `Main` dan isikan kode berikut:
+
+    import java.util.Scanner;
+    
+    public class Main {
+    public static void main(String[] args){
+    Scanner scanner =new Scanner(System.in);
+    System.out.print("Enter Vehicle Type (Car/Motorcyle):");
+    String type = scanner.next();
+    System.out.println("Enter vehicle price: ");
+    double price = scanner.nextDouble();
+    
+            TaxCalculator calculator = new TaxCalculator();
+            double tax = calculator.calculateTax(type,price);
+    
+            System.out.println("Calculated tax: " + tax);
+        }
+    }
 
 
 Tugas:
@@ -230,13 +405,70 @@ Langkah membuat solusi latihan:
 1. Buat sebuah package baru di dalam `praktikum_5` dengan nama `latihan`
 2. Buat sebuah interface dengan nama `TaxStrategy` dan isikan kode berikut:
 
+        public interface TaxStrategy {
+        double calculateTax(double price);
+        }
+
 3. Buat sebuah class dengan nama `TaxCalculator` dan isikan kode berikut:
+
+        public class TaxCalculator {
+        public double calculateTax(TaxStrategy strategy,double price){
+        return strategy.calculateTax(price);
+        }
+        }
 
 4. Buat sebuah class dengan nama `CarTax` dan isikan kode berikut:
 
+        public class CarTax implements TaxStrategy{
+        @Override
+        public double calculateTax(double price){
+        return price * 0.1;
+        }
+        }
+
+
 5. Buat sebuah class dengan nama `MotorcyleTax` dan isikan kode berikut:
 
+        public class MotorcycleTax implements TaxStrategy{
+        @Override
+        public double calculateTax(double price){
+        return price * 0.5;
+        }
+        }
+
 6. Buat sebuah class `Main` untuk menguji kode tersebut
+
+        import java.util.Scanner;
+        
+        public class Main {
+        public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        
+                System.out.print("Enter Vehicle Type (Car/Motorcycle/Truck): ");
+                String type = scanner.next();
+        
+                System.out.print("Enter vehicle price: ");
+                double price = scanner.nextDouble();
+        
+                TaxStrategy strategy;
+        
+                if(type.equalsIgnoreCase("Car")){
+                    strategy = new CarTax();
+                } else if(type.equalsIgnoreCase("Motorcycle")){
+                    strategy = new MotorcycleTax();
+                } else if(type.equalsIgnoreCase("Truck")){
+                    strategy = new CarTax();
+                } else {
+                    System.out.println("Unknown vehicle type!");
+                    return;
+                }
+        
+                TaxCalculator calculator = new TaxCalculator();
+                double tax = calculator.calculateTax(strategy, price);
+        
+                System.out.println("Calculated tax: " + tax);
+            }
+        }
 
 ---
 ### Kesimpulan
