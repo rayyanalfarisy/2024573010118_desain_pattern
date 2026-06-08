@@ -94,26 +94,33 @@ Buat class baru di dalam tanpa_lsp dengan nama Rectangle dan isikan kode seperti
 Buat class Square dan isikan kode berikut:
 
 ![img.png](img.png)
+
 Buat class Main dan isikan kode berikut:
 
 ![img_2.png](gambar/img_2.png)
+
 Jalankan dan lihat hasilnya.
 
 ![img_1.png](img_1.png)
+
 ##### Refactor kode di atas untuk mematuhi aturan LSP
 Buat sebuah package baru di dalam praktikum_1 dan beri nama dengan_lsp
 Buat sebuah interface dengan nama Shape dan isikan kode berikut:
 
 ![img_2.png](img_2.png)
+
 Buat sebuah class dengan nama Rectangle dan isikan kode berikut:
 
 ![img_3.png](img_3.png)
+
 Buat sebuah class dengan nama Square dan isikan kode berikut:
 
 ![img_4.png](img_4.png)
+
 Buat sebuah class Main dan isikan kode berikut:
 
 ![img_5.png](img_5.png)
+
 Jalankan dan lihat hasilnya.
 
 ![img_6.png](img_6.png)
@@ -129,13 +136,16 @@ Buat class baru di dalam tanpa_lsp dengan nama SocialMediaPost dan isikan kode s
 Buat class TwitterPost dan isikan kode berikut:
 
 ![img_8.png](img_8.png)
+
 Buat class BlogPost dan isikan kode berikut:
 
 ![img_9.png](img_9.png)
+
 Buat class Main dan isikan kode berikut:
 
 ![img_10.png](img_10.png)
 ![img_11.png](img_11.png)
+
 Jalankan dan lihat hasilnya.
 
 ![img_12.png](img_12.png)
@@ -144,20 +154,25 @@ Buat sebuah package baru di dalam praktikum_2 dan beri nama dengan_lsp
 Buat sebuah interface dengan nama Publishable dan isikan kode berikut:
 
 ![img_13.png](img_13.png)
+
 Buat sebuah class dengan nama SocialPost dan isikan kode berikut:
 
 ![img_14.png](img_14.png)
+
 Buat sebuah class dengan nama TwitterPost dan isikan kode berikut:
 
 ![img_15.png](img_15.png)
+
 Buat sebuah class dengan nama BlogPost dan isikan kode berikut:
 
 ![img_16.png](img_16.png)
 ![img_17.png](img_17.png)
+
 Buat sebuah class Main dan isikan kode berikut:
 
 ![img_18.png](img_18.png)
 ![img_19.png](img_19.png)
+
 Jalankan dan lihat hasilnya.
 
 ![img_20.png](img_20.png)
@@ -170,12 +185,15 @@ Pada program ini, kita akan membuat sebuah sistem navigasi di mana beberapa kend
 Class Vehicle
 
 ![img_21.png](img_21.png)
+
 Class Car
 
 ![img_22.png](img_22.png)
+
 Class Bicycle
 
 ![img_23.png](img_23.png)
+
 Class Main
 
 ![img_24.png](img_24.png)
@@ -195,18 +213,23 @@ Buat sebuah package baru di dalam modul_9 dan beri nama praktikum_2
 Kemudian buat sebuah interface FilterStrategy dan isikan kode berikut:
 
 ![img_25.png](img_25.png)
+
 Buat class WalkingRoute dan isikan kode berikut:
 
 ![img_26.png](img_26.png)
+
 Buat class DrivingRoute dan isikan kode berikut:
 
 ![img_27.png](img_27.png)
+
 Buat class PublicTransportRoute dan isikan kode berikut:
 
 ![img_28.png](img_28.png)
+
 Buat class Navigator dan isikan kode berikut:
 
 ![img_29.png](img_29.png)
+
 Buat class Main dan isikan kode berikut:
 
 ![img_30.png](img_30.png)
@@ -222,18 +245,23 @@ Buat sebuah package baru di dalam modul_9 dan beri nama praktikum_2
 Kemudian buat sebuah interface FilterStrategy dan isikan kode berikut:
 
 ![img_31.png](img_31.png)
+
 Buat class BlackWhiteFilter dan isikan kode berikut:
 
 ![img_32.png](img_32.png)
+
 Buat class SepiaFilter dan isikan kode berikut:
 
 ![img_33.png](img_33.png)
+
 Buat class BrightFilter dan isikan kode berikut:
 
 ![img_34.png](img_34.png)
+
 Buat class PhotoEditor dan isikan kode berikut:
 
 ![img_35.png](img_35.png)
+
 Buat class Main dan isikan kode berikut:
 
 ![img_36.png](img_36.png)
@@ -250,18 +278,23 @@ Buat sebuah package baru di dalam modul_9 dan beri nama praktikum_3
 Kemudian buat sebuah interface NotificationStrategy dan isikan kode berikut:
 
 ![img_37.png](img_37.png)
+
 Buat class EmailNotification dan isikan kode berikut:
 
 ![img_38.png](img_38.png)
+
 Buat class SMSNotification dan isikan kode berikut:
 
 ![img_39.png](img_39.png)
+
 Buat class PushNotification dan isikan kode berikut:
 
 ![img_40.png](img_40.png)
+
 Buat class NotificationService dan isikan kode berikut:
 
 ![img_41.png](img_41.png)
+
 Buat class Main dan isikan kode berikut:
 
 ![img_42.png](img_42.png)
@@ -286,18 +319,23 @@ Buat sebuah package baru di dalam Praktikum_7 dan beri nama latihan
 Kemudian buat sebuah interface PaymentStrategy dan isikan kode berikut:
 
 ![img_43.png](img_43.png)
+
 Buat class CreditCarPayment dan isikan kode berikut:
 
 ![img_44.png](img_44.png)
+
 Buat class EwalletPayment dan isikan kode berikut:
 
 ![img_45.png](img_45.png)
+
 Buat class BankTransferPayment dan isikan kode berikut:
 
 ![img_46.png](img_46.png)
+
 Buat class CheckOut dan isikan kode berikut:
 
 ![img_47.png](img_47.png)
+
 Buat class Main dan isikan kode berikut:
 
 ![img_48.png](img_48.png)
